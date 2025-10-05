@@ -22,5 +22,13 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Run autotests
-      run: bash run_tests.sh
+    - name: Run tests and generate report
+      run: pytest --junitxml=report.xml
+
+    - name: Publish Test Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
+      with:
+        name: Pytest Report
+        path: report.xml
+        reporter: java-junit
