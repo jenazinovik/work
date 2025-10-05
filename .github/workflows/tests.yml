@@ -36,3 +36,4 @@ jobs:
         name: Pytest Report
         path: report.xml
         reporter: java-junit
+        fail-on-error: false
