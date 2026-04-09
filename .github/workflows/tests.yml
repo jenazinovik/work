@@ -5,6 +5,8 @@ on:
     branches: ['*']
   pull_request:
     branches: ['*']
+  schedule:
+    - cron: '0 9 * * *' # 12:00 MSK (09:00 UTC)
 
 jobs:
   test:
