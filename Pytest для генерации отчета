@@ -1,1 +1,0 @@
-pytest --junit-xml=pytest-results.xml
